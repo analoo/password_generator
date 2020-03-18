@@ -1,16 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var passwordArray = [];
 console.log(generateBtn);
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
-
 }
 
 // Add event listener to generate button
@@ -26,7 +23,7 @@ function generatePassword(){
   var lowerCaseBoolean = confirm("Do you want to include lower case?");
   var upperCaseBoolean = confirm("Do you want to include upper case?");
   var userAnswers = [numbersBoolean, specialCharsBoolean, lowerCaseBoolean, upperCaseBoolean];
-
+  
   console.log(lowerCaseBoolean)
   true
   if (true){
@@ -42,6 +39,18 @@ function generatePassword(){
 
 
 }
+
+function generateLowerCase(chars){
+  for (let i=0 ; i < chars ; i++){
+    var lcValue = Math.floor(Math.random() * (122 - 97) + 97);
+    passwordArray.push(lcValue);
+  }
+  console.log(passwordArray);
+  
+}
+
+generateLowerCase(10);
+
 
 // THEN my input should be validated and at least one character type should be selected
 // WHEN all prompts are answered
