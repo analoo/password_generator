@@ -1,6 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var passwordArray = [];
 console.log(generateBtn);
 
 // Write password to the #password input
@@ -20,7 +19,7 @@ function generatePassword() {
   var passwordLength = prompt("What is the length password that you need? (min 8 chars, max 128)");
 
   if ( passwordLength >= 8 && passwordLength <= 128 )  {
-    passwordRequirements();
+    joinChars(passwordRequirements(),passwordLength);
   }
 
   else {
@@ -51,6 +50,14 @@ function passwordRequirements(){
     passwordRequirements()
   }
 
+}
+
+function joinChars(requirements, length){
+  var joinedText = "";
+  for (let i =0; i < length; i++){
+    joinedText = joinedText + generateLowerCase();
+  }
+  console.log(joinedText);
 }
 
 // function that creates a lower case letter when called upon
