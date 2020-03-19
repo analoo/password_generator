@@ -14,8 +14,8 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-function generatePassword(){
-  
+function generatePassword() {
+
   // asks the user what length password they want
   var passwordLength = prompt("What is the length password that you need? (min 8 chars, max 128)");
   var numbersBoolean = confirm("Do you want to include numbers?");
@@ -23,34 +23,37 @@ function generatePassword(){
   var lowerCaseBoolean = confirm("Do you want to include lower case?");
   var upperCaseBoolean = confirm("Do you want to include upper case?");
   var userAnswers = [numbersBoolean, specialCharsBoolean, lowerCaseBoolean, upperCaseBoolean];
-  
+
+
   console.log(lowerCaseBoolean)
   true
-  if (true){
+  if (true) {
     password = "NiceTry!";
     return password;
   }
-  else{
+  else {
     alert("Try Again!")
   }
 
 
-  
+
 
 
 }
 
-function generateLowerCase(chars){
-  for (let i=0 ; i < chars ; i++){
-    var lcValue = Math.floor(Math.random() * (122 - 97) + 97);
-    passwordArray.push(lcValue);
-  }
-  console.log(passwordArray);
-  
+// function that creates a lower case letter when called upon
+function generateLowerCase() {
+  var lcValue = Math.floor(Math.random() * (122 - 97) + 97);
+  return String.fromCharCode(lcValue);
 }
 
-generateLowerCase(10);
 
+function generateUpperCase() {
+  var lcValue = Math.floor(Math.random() * (90 - 65) + 65);
+  return String.fromCharCode(lcValue);
+}
+
+// console.log(generateUpperCase())
 
 // THEN my input should be validated and at least one character type should be selected
 // WHEN all prompts are answered
