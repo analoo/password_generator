@@ -15,16 +15,12 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
 
-  // asks the user what length password they want
-  var passwordLength = prompt("What is the length password that you need? (min 8 chars, max 128)");
-
-  if (passwordLength >= 8 && passwordLength <= 128) {
-    return joinChars(passwordRequirements(), passwordLength);
+  var passwordLength  = 0 ;
+  while(passwordLength < 8 || passwordLength > 128){
+    passwordLength = prompt("What is the length password that you need? (min 8 chars, max 128)");
   }
 
-  else {
-    generatePassword();
-  }
+  return joinChars(passwordRequirements(), passwordLength);
 }
 
 function passwordRequirements() {
@@ -62,9 +58,6 @@ function joinChars(requirements, length) {
   }
 
   return joinedText;
-
-  console.log(joinedText);
-
 }
 
 // function that creates a lower case letter when called upon
@@ -90,9 +83,3 @@ function generateSpecialChar() {
   var value = Math.floor(Math.random() * (47 - 33) + 33);
   return String.fromCharCode(value);
 }
-
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
