@@ -19,10 +19,14 @@ function generatePassword() {
   // asks the user what length password they want
   var passwordLength = prompt("What is the length password that you need? (min 8 chars, max 128)");
 
+  if ( passwordLength >= 8 && passwordLength <= 128 )  {
+    passwordRequirements();
+  }
 
-
-  console.log(lowerCaseBoolean)
-  true
+  else {
+    generatePassword();
+  }
+  
   if (true) {
     password = "NiceTry!";
     return password;
@@ -72,9 +76,6 @@ function generateSpecialChar() {
   var value= Math.floor(Math.random() * (47 - 33) + 33);
   return String.fromCharCode(value);
 }
-
-
-// console.log(generateUpperCase())
 
 // THEN my input should be validated and at least one character type should be selected
 // WHEN all prompts are answered
