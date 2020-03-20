@@ -43,7 +43,7 @@ function joinChars(requirements, length) {
 // this for loop iterates over the requirements and adds values to the true user reqs
   for (let i = 0; i < requirements.length; i++) {
     if (requirements[i]) {
-      textGenerator.push(userOptionFunctions[i]);
+      trueUserReqs.push(userOptionFunctions[i]);
     }
   }
 ```
